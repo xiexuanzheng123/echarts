@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         index: [
             'babel-polyfill',
-            './js/pie/pie'
+            './js/pie/nightingale'
         ]
     },
     output: {
