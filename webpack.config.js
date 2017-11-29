@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         index: [
             'babel-polyfill',
-            './js/gantt/index1'
+            './js/profile/profile'
         ]
     },
     output: {
