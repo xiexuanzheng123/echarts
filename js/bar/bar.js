@@ -84,7 +84,7 @@ myChart.setOption({
         // height: 300
         containLabel: false,
         backgroundColor: 'rgba(128, 128, 128, 0.1)',
-        borderColor: 'green',
+        //borderColor: 'green',
         tooltip: {
             show: true,
             trigger: 'axis',
@@ -100,7 +100,7 @@ myChart.setOption({
                         return params.value;
                     },
                     padding: [5, 10, 5, 10],
-                    backgroundColor: '#ccc'
+                    backgroundColor: '#000'
                 },
                 lineStyle: {
                     color: 'pink'
@@ -111,17 +111,65 @@ myChart.setOption({
     },
     tooltip: {},
     xAxis: {
-        show: true,
-        
-        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        //show: true,
+        position: 'bottom',
+        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+        type: 'category',
+        name: 'item',
+        nameLocation: 'end',
+        nameTextStyle: {
+            color: 'green',
+            fontStyle: 'italic',
+            fontWeight: 'bold',
+            fontFamily: 'Arial',
+            align: 'right',
+            lineHeight: 30,
+            backgroundColor: 'lightblue',
+            //padding: 10,
+            rich: {
+                a: {
+                    color: 'red',
+                    lineHeight: 10
+                },
+                b: {
+                    backgroundColor: '#ccc',
+                    height: 40
+                },
+                x: {
+                    fontSize: 18,
+                    fontFamily: 'Microsoft YaHei',
+                    borderColor: '#449933',
+                    borderRadius: 4
+                }
+            }
+        },
+        axisLine: {
+            show: true,
+            symbol: ['none', 'arrow'],
+            lineStyle: {
+                color: 'green',
+                width: 1
+            }
+        },
+        axisTick: {
+            show: true,
+            alignWithLabel: false,
+            interval: 0,
+            inside: true,
+            length: 280
+        },
+        nameGap: 10,
+        boundaryGap: true,
+        // min: function(value) {
+        //     console.log(value);
+        //     return value;
+        // }
     },
-    yAxis: {},
+    yAxis: {
+        type: 'value',
+    },
     series: [{
         name: '衬衫',
-        type: 'bar',
-        data: [5, 20, 36, 10, 10, 20]
-    },{
-        name: '羊毛衫',
         type: 'bar',
         data: [5, 20, 36, 10, 10, 20]
     }]
