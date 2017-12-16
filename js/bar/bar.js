@@ -37,43 +37,36 @@ myChart.setOption({
         // right: 10,
         top: 10,
         left: 'right',
-        data: ['衬衫', '羊毛衫'],
+        //data: ['aa'],
         padding: 10,
         //width: 40,
         // height: 20,
         // zlevel: 1,
         itemGap: 10,
-        formatter: function (name) {
-            return echarts.format.truncateText(name, 40, '14px Microsoft Yahei');;
-        },
-        selectedMode: 'multiple',
+        // formatter: function (name) {
+        //     return echarts.format.truncateText(name, 40, '14px Microsoft Yahei');;
+        // },
+        //selectedMode: 'multiple',
         tooltip: {
             show: true
         },
         data: [
             {
-                name: '衬衫',
-                icon: 'circle',
-                textStyle: {
-                    color: 'red'
-                }
-            },
-            {
-                name: '羊毛衫',
-                icon: 'circle',
-                textStyle: {
-                    color: 'blue'
-                }
+                name: '销量',
+                // icon: 'circle',
+                // textStyle: {
+                //     color: 'green'
+                // }
             }
         ],
-        backgroundColor: 'rgb(128, 128, 128)',
-        borderColor: 'yellow',
-        borderWidth: 2,
-        borderRadius: 10,
-        shadowBlur: 10,
-        shadowColor: 'rgba(0, 0, 0, .5)',
-        pageButtonItemGap: 100,
-        pageButtonPosition: 'start'
+        // backgroundColor: 'rgb(128, 128, 128)',
+        // borderColor: 'yellow',
+        // borderWidth: 2,
+        // borderRadius: 10,
+        // shadowBlur: 10,
+        // shadowColor: 'rgba(0, 0, 0, .5)',
+        // pageButtonItemGap: 100,
+        // pageButtonPosition: 'start'
     },
     grid: {
         show: true,
@@ -87,7 +80,7 @@ myChart.setOption({
         //borderColor: 'green',
         tooltip: {
             show: true,
-            trigger: 'axis',
+            //trigger: 'axis',
             axisPointer: {
                 type: 'line',
                 axis: 'y',
@@ -103,7 +96,7 @@ myChart.setOption({
                     backgroundColor: '#000'
                 },
                 lineStyle: {
-                    color: 'pink'
+                    color: 'black'
                 }
             },
             extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);'
@@ -113,7 +106,10 @@ myChart.setOption({
     xAxis: {
         //show: true,
         position: 'bottom',
-        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+        data: [{value: '衬衫', textStyle: {
+            fontSize: 14,
+            color: 'blue'
+        }}, '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
         type: 'category',
         name: 'item',
         nameLocation: 'end',
@@ -156,7 +152,15 @@ myChart.setOption({
             alignWithLabel: false,
             interval: 0,
             inside: true,
-            length: 280
+            length: 280,
+            lineStyle: {
+                color: '#ccc'
+            }
+        },
+        axisLabel: {
+            inside: false,
+            margin: 40,
+            color: '#000'
         },
         nameGap: 10,
         boundaryGap: true,
@@ -164,12 +168,71 @@ myChart.setOption({
         //     console.log(value);
         //     return value;
         // }
+        splitLine: {
+            interval: 1,
+            lineStyle: {
+                color: ['#aaa', '#ddd'],
+                width: 20
+            }
+        },
+        splitArea: {
+            show: true
+        },
+        axisPointer: {
+            show: true
+        }
     },
     yAxis: {
         type: 'value',
+        position: 'left',
+        name: 'yAxis',
+        nameLocation: 'middle',
+        nameTextStyle: {
+            textBorderWidth: 1,
+            textBorderColor: 'yellow'
+        },
+        nameGap: 30,
+        axisLine: {
+            show: true,
+            symbol: ['none', 'arrow'],
+            symbolSize: [5, 8],
+            lineStyle: {
+                color: 'red',
+                width: 2
+            } 
+        },
+        axisTick: {
+            show: true,
+        },
+        axisLabel: {
+            show: true,
+            color: 'green'
+        },
+        splitLine: {
+            show: true,
+            interval: 0,
+            lineStyle: {
+                color: 'green',
+                width: 1
+            }
+        },
+        splitArea: {
+            interval: 2,
+            show: true
+        },
+        axisPointer: {
+            show: true,
+            color: 'yellow',
+            type: 'line',
+            label: {
+                show: true,
+                color: 'black',
+                backgroundColor: '#ccc'
+            }
+        } 
     },
     series: [{
-        name: '衬衫',
+        name: '销量',
         type: 'bar',
         data: [5, 20, 36, 10, 10, 20]
     }]
