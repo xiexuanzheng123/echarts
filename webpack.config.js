@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         index: [
             'babel-polyfill',
-            './js/visualMapPiecewise/scatter'
+            './js/scatters/pubble'
         ]
     },
     output: {
