@@ -232,6 +232,22 @@ let option = {
         min: 0,
         max: 300,
         splitNumber: 5,
+        maxOpen: true,
+        minOpen: true,
+        selectedMode: 'multiple',
+        inverse: true,
+        itemWidth: 55,
+        itemHeight: 30,
+        align: 'right',
+        //text: ['high', 'low'],
+        textGap: 20,
+        showLabel: true,
+        itemSymbol: 'diamond',
+        show: true,
+        inRange: {
+            symbolSize: [25, 15],
+            color: ['#121122', 'rgba(3, 4, 5, 0.4)', 'red']
+        },
         color: ['#d94e5d', '#eac736', '#50a3ba'],
         textStyle: {
             color: '#fff'
@@ -239,9 +255,14 @@ let option = {
     },
     geo: {
         map: 'china',
+        roam: true,
+        center: [105.97, 45.71],
         label: {
+            normal: {
+                //show: true
+            },
             emphasis: {
-                show: false
+                show: true
             }
         },
         itemStyle: {
